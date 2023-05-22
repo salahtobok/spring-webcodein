@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class WebcodeinApplication {
+public class SpringWebcodeinAdminApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebcodeinApplication.class, args);
+		SpringApplication.run(SpringWebcodeinAdminApplication.class, args);
 	}
 
 

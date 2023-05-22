@@ -4,10 +4,14 @@ package com.admin.common.data.entity;
 
 import com.admin.common.data.config.AuditTrailListener;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@Getter
+@Setter
 @MappedSuperclass
 //@ExcludeDefaultListeners
 @EntityListeners(AuditTrailListener.class)
@@ -28,20 +32,4 @@ public abstract class AuditedEntity implements Serializable {
     @Column(name = "created_by",updatable = false)
     private String CreatedBy;
 
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public void setUpdatedOn(Date updatedOn) {
-        this.updatedOn = updatedOn;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        CreatedBy = createdBy;
-    }
 }
