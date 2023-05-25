@@ -1,30 +1,57 @@
 package com.admin.webcodein.data.entity;
 
-import com.admin.common.data.entity.AuditedEntity;
 import com.admin.common.data.config.DbSchema;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.admin.common.data.entity.AuditedEntity;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+import javax.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
+import java.util.ArrayList;
 
+/**
+ * *************************
+ * **** @AFCSOFT ***** *************************
+ */
+
+/**
+ * ****** Lombok Annotations *********
+ */
+@Data
 @Entity
-@Table(name = "admin_user", schema = DbSchema.ADMINISTRATION_SCHEMA)
+@Table(name = "user", schema = DbSchema.ADMINISTRATION_SCHEMA)
 public class User extends AuditedEntity implements Serializable {
-    private static Log log = LogFactory.getLog(User.class);
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "firstName", unique = true)
-    private String firstName;
-
-    @Column(name = "lastName", unique = true)
-    private String lastName;
-
+    @JsonbTransient
     @Column(name = "username", unique = true)
     private String username;
 
+    @NotNull
+    @NotBlank
+    @JsonbTransient
+    @Column
+    @Size(min = 1, max = 100)
+    private String firstname;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 1, max = 100)
+    @Column
+    @JsonbTransient
+    private String lastName;
+
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
