@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.admin.webcodein.business.controller.UserWebController;
-import com.admin.webcodein.business.service.UserDbService;
-import com.admin.webcodein.data.entity.User;
+import com.admin.webcodein.controller.UserWebController;
+import com.admin.webcodein.service.UserDbService;
+import com.admin.webcodein.domain.User;
 import com.admin.webcodein.util.DateUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;

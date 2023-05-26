@@ -1,7 +1,7 @@
 package com.admin.webcodein;
 
-import com.admin.webcodein.data.entity.Room;
-import com.admin.webcodein.data.repository.RoomRepository;
+import com.admin.webcodein.domain.Room;
+import com.admin.webcodein.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

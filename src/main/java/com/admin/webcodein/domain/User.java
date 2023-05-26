@@ -1,4 +1,4 @@
-package com.admin.webcodein.data.entity;
+package com.admin.webcodein.domain;
 
 import com.admin.common.data.config.DbSchema;
 import com.admin.common.data.entity.AuditedEntity;

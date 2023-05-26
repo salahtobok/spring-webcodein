@@ -1,8 +1,8 @@
-package com.admin.webcodein.business.service;
+package com.admin.webcodein.service;
 
 
-import com.admin.webcodein.data.entity.User;
-import com.admin.webcodein.data.repository.UserRepository;
+import com.admin.webcodein.domain.User;
+import com.admin.webcodein.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
