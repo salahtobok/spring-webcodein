@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webcodein-admin:war exploded">
+    <output-path>$PROJECT_DIR$/webcodein-admin/target/webcodein-admin-0.0.1-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>webcodein-admin</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="webcodein-admin" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:unknown" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:unknown" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:unknown" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:unknown" />
+          <element id="library" level="project" name="Maven: javax.json.bind:javax.json.bind-api:1.0" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:8.0.0.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/webcodein-admin/target/webcodein-admin-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="webcodein-admin/web/Web" />
+    </root>
+  </artifact>
+</component>

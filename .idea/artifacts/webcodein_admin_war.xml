@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="webcodein-admin:war">
+    <output-path>$PROJECT_DIR$/webcodein-admin/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>webcodein-admin</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="webcodein-admin-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="webcodein-admin:war exploded" />
+    </root>
+  </artifact>
+</component>
