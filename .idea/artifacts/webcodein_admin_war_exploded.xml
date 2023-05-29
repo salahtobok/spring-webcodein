@@ -16,8 +16,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:3.0.7" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:3.0.7" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.0.7" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.7" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:3.0.7" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.4.7" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.4.7" />
@@ -84,6 +82,18 @@
           <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.5.0.Final" />
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.0.7" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.7" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-oauth2-resource-server:3.0.7" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-oauth2-resource-server:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-oauth2-core:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:6.0.3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-oauth2-jose:6.0.3" />
+          <element id="library" level="project" name="Maven: com.nimbusds:nimbus-jose-jwt:9.24.4" />
+          <element id="library" level="project" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
