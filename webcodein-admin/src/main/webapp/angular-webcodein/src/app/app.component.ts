@@ -10,7 +10,7 @@ import {authConfig} from "../auth.config";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'admin';
+  title = 'webcodein';
 
 
   constructor(private oauthService: OAuthService,private adminService : AdminService) {
@@ -18,8 +18,8 @@ export class AppComponent implements OnInit{
   }
 
   keycloak = new Keycloak({
-    clientId: "backend-service", url: "http://localhost:8543/",
-    "realm": "quarkus",
+    clientId: "webcodein", url: "http://localhost:8543/",
+    "realm": "spring-boot",
   });
 
   ngOnInit(): void {
