@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/ ")
+@RequestMapping("/api/v1/users")
 public class UserWebServiceController {
 
     private final UserDbService userDbService;

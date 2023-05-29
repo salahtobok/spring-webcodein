@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "a3104164-7509-4a0a-82d0-e831d713aae8",
+		"name": "webcodein",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26221946",
+		"_collection_link": "https://webcodein.postman.co/workspace/Team-Workspace~c3ee7350-eb44-49bc-8b93-4c9304d91cd0/collection/26221946-a3104164-7509-4a0a-82d0-e831d713aae8?action=share&creator=26221946&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "admin-module",
+			"item": [
+				{
+					"name": "Fetch users list",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "redirect_uri",
+									"value": "{{callBackUrl}}",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "webcodein-admin",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "{{accessTokenUrll}}",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "{{authUrl}}",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restApiDomainNameUrl}}/users",
+							"host": [
+								"{{restApiDomainNameUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "keycloak",
+			"item": [
+				{
+					"name": "Fetch access token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "root",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "salahtobok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keycloakSecurityServerUrl}}/realms/spring-boot/protocol/openid-connect/token?response_type=code&client_id=webcodein-admin&state&scope=openid profile&redirect_uri=https://localhost:8081",
+							"host": [
+								"{{keycloakSecurityServerUrl}}"
+							],
+							"path": [
+								"realms",
+								"spring-boot",
+								"protocol",
+								"openid-connect",
+								"token"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "client_id",
+									"value": "webcodein-admin"
+								},
+								{
+									"key": "state",
+									"value": null
+								},
+								{
+									"key": "scope",
+									"value": "openid profile"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://localhost:8081"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
