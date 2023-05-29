@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
 
   keycloak = new Keycloak({
     clientId: "webcodein", url: "http://localhost:8543/",
-    "realm": "spring-boot",
+    realm: "spring-boot",
   });
 
   ngOnInit(): void {
