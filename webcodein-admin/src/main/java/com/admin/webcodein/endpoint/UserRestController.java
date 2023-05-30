@@ -1,8 +1,8 @@
 package com.admin.webcodein.endpoint;
 
 
-import com.admin.webcodein.service.UserDbService;
 import com.admin.webcodein.domain.User;
+import com.admin.webcodein.service.UserDbService;
 import com.admin.webcodein.util.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +15,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
-public class UserWebServiceController {
+public class UserRestController {
 
     private final UserDbService userDbService;
 
 
     @Autowired
-    public UserWebServiceController(UserDbService userDbService) {
+    public UserRestController(UserDbService userDbService) {
         this.userDbService = userDbService;
     }
 
