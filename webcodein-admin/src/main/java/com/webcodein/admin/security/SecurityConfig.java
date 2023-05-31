@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -22,11 +23,14 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         System.out.println("hi ===> ");
         http
-                .authorizeHttpRequests((authz) -> authz
-                        .anyRequest().authenticated()
+                .authorizeHttpRequests(requests -> {
+                    requests
+                                    .requestMatchers("*/token").hasAnyRole("user", "admin")
+                                    .anyRequest().authenticated();
+                        }
                 )
-                .httpBasic(withDefaults())
-                .authenticationManager(new CustomAuthenticationManager());
+                .logout(LogoutConfigurer::permitAll);
+
         return http.build();
     }
 }
