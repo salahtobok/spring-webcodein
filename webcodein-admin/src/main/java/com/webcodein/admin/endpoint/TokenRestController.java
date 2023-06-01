@@ -2,6 +2,7 @@ package com.webcodein.admin.endpoint;
 
 
 import jakarta.annotation.security.RolesAllowed;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ import java.util.Map;
 public class TokenRestController {
 
     @GetMapping
-    @RolesAllowed("admin")
+    @PreAuthorize("hasRole('admin')")
     public Map<String,Object> getToken(@AuthenticationPrincipal Jwt jwt){
         return Collections.singletonMap("principal",jwt);
     }
