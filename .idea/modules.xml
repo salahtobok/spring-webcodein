@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-keycloak/spring-boot-keycloak.iml" filepath="$PROJECT_DIR$/spring-boot-keycloak/spring-boot-keycloak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-keycloak-2/spring-boot-keycloak-2.iml" filepath="$PROJECT_DIR$/spring-boot-keycloak-2/spring-boot-keycloak-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-webcodein.iml" filepath="$PROJECT_DIR$/spring-webcodein.iml" />
       <module fileurl="file://$PROJECT_DIR$/webcodein-admin/webcodein-admin.iml" filepath="$PROJECT_DIR$/webcodein-admin/webcodein-admin.iml" />
     </modules>

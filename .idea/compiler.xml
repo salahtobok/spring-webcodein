@@ -8,9 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="webcodein-admin" />
+        <module name="spring-boot-keycloak" />
+        <module name="spring-boot-keycloak-2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-boot-keycloak" target="17" />
+      <module name="spring-boot-keycloak-2" target="17" />
       <module name="spring-webcodein" target="18" />
       <module name="spring-webcodein-admin" target="18" />
       <module name="webcodein-admin" target="17" />
@@ -18,6 +22,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-boot-keycloak" options="-parameters" />
+      <module name="spring-boot-keycloak-2" options="-parameters" />
       <module name="spring-webcodein-admin" options="" />
       <module name="webcodein-admin" options="-parameters" />
     </option>
