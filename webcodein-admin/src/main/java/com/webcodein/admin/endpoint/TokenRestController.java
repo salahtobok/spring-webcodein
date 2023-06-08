@@ -17,7 +17,7 @@ import java.util.Map;
 public class TokenRestController {
 
     @GetMapping
-    @RolesAllowed("user")
+    @RolesAllowed("useer")
     public Map<String,Object> getToken(@AuthenticationPrincipal Jwt jwt){
         return Collections.singletonMap("principal",jwt);
     }
