@@ -26,17 +26,25 @@ public class SecurityConfig {
                 .csrf()
                     .disable()
                 .authorizeHttpRequests()
-                    .anyRequest()
-                        .authenticated();
+                // .requestMatchers("/public").permitAll()
+                .anyRequest()
+                        .authenticated()
+                        .and()
+                .oauth2Login();
+
+
 
         http
                 .oauth2ResourceServer()
                     .jwt()
                         .jwtAuthenticationConverter(jwtAuthConverter);
 
+
+
         http
                 .sessionManagement()
                     .sessionCreationPolicy(STATELESS);
+
 
         return http.build();
     }

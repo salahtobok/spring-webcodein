@@ -53,4 +53,28 @@ public class SpringWebcodeinApplication {
 				.password("root")
 				.build();
 	}
+
+
+	/**
+	 * @Bean
+	 * public ClientRegistrationRepository clientRepository() {
+	 *
+	 * 	ClientRegistration keycloak = keycloakClientRegistration();
+	 * 	return new InMemoryClientRegistrationRepository(keycloak);
+	 * }
+	 *
+	 * private ClientRegistration keycloakClientRegistration() {
+	 *
+	 * 	return ClientRegistration.withRegistrationId("howtodoinjava-realm")
+	 * 		.clientId("employee-management-api")
+	 * 		.clientSecret("--generated--")
+	 * 		.redirectUri("http://localhost:9090/login/oauth2/code/employee-management-api")
+	 * 		.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+	 * 		.issuerUri("http://localhost:8180/realms/howtodoinjava-realm")
+	 * 		.authorizationUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/auth")
+	 * 		.tokenUri("http://localhost:8180/realms/howtodoinjava/protocol/openid-connect/token")
+	 * 		.userInfoUri("http://localhost:8180/realms/howtodoinjava/protocol/openid-connect/userinfo")
+	 * 		.build();
+	 * }
+	 */
 }
