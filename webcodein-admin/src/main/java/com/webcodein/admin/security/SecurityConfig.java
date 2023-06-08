@@ -25,16 +25,16 @@ public class SecurityConfig {
         http
                 .csrf()
                     .disable()
-                .authorizeHttpRequests()
-                // .requestMatchers("/public").permitAll()
-                .anyRequest()
-                        .authenticated()
-                        .and()
-                .oauth2Login();
-
-
-
-        http
+                .authorizeHttpRequests(registry -> {
+                    try {
+                        registry
+                                .requestMatchers("/sayHelloApi").hasRole("USER")
+                                .anyRequest().authenticated().and().oauth2Login();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                )
                 .oauth2ResourceServer()
                     .jwt()
                         .jwtAuthenticationConverter(jwtAuthConverter);
@@ -49,3 +49,5 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
+
