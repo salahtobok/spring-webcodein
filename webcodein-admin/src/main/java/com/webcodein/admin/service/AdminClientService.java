@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Note to allow the user to access to these resources and function you must give theme the appropiate roles
- * & Configure the client scope to pass those roles
+ * Note to allow the user to access to these resources and functions you must give them the appropriate roles
+ * & Configure the client scope to pass these roles
  */
 @Service
 public class AdminClientService {
