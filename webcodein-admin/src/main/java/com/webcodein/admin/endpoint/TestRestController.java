@@ -2,7 +2,6 @@ package com.webcodein.admin.endpoint;
 
 
 import jakarta.annotation.security.RolesAllowed;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +12,11 @@ import java.util.Collections;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/token")
-public class TokenRestController {
+@RequestMapping("/sayHelloApi")
+public class TestRestController {
 
     @GetMapping
-    public Map<String,Object> getToken(@AuthenticationPrincipal Jwt jwt){
-        return Collections.singletonMap("principal",jwt);
+    public String writeHello(){
+        return "Hello world";
     }
 }
