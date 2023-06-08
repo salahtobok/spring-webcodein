@@ -41,9 +41,9 @@ public class SecurityConfig {
 
 
 
-        http
+/*        http
                 .sessionManagement()
-                    .sessionCreationPolicy(STATELESS);
+                    .sessionCreationPolicy(STATELESS);*/
 
 
         return http.build();
