@@ -1,13 +1,9 @@
 package com.webcodein.admin;
 
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.webcodein.admin.controller.UserWebController;
-import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.domain.User;
+import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.util.DateUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +12,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.mockito.BDDMockito.given;

@@ -1,7 +1,6 @@
 package com.webcodein.admin.config.webservice;
 
 import com.webcodein.admin.exception.handler.AccessDeniedExceptionMapper;
-import com.webcodein.admin.exception.handler.GenericExceptionMapper;
 import com.webcodein.admin.exception.handler.ConstraintViolationExceptionMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.ws.rs.ApplicationPath;

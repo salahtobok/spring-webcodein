@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import Keycloak from "keycloak-js";
-import {AuthConfig, OAuthService} from "angular-oauth2-oidc";
+import {OAuthService} from "angular-oauth2-oidc";
 import {AdminService} from "../admin.service";
 import {authConfig} from "../auth.config";
 

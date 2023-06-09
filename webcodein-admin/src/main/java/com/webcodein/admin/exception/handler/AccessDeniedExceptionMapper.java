@@ -5,7 +5,6 @@ import com.webcodein.admin.enums.RestResponseMessage;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
-
 import org.springframework.security.access.AccessDeniedException;
 @Provider
 public class AccessDeniedExceptionMapper implements ExceptionMapper<AccessDeniedException> {
