@@ -1,4 +1,4 @@
-package com.webcodein.admin.endpoint;
+package com.webcodein.common.endpoint;
 
 
 import jakarta.annotation.security.RolesAllowed;

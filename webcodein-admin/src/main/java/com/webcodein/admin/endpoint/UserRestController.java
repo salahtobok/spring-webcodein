@@ -4,17 +4,24 @@ package com.webcodein.admin.endpoint;
 import com.webcodein.admin.domain.User;
 import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.util.DateUtils;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/v1/users")
+import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
+
+@Component
+@Slf4j
+@Path("/users")
 public class UserRestController {
 
     private final UserDbService userDbService;
@@ -25,7 +32,8 @@ public class UserRestController {
         this.userDbService = userDbService;
     }
 
-    @GetMapping
+    @GET
+    @Produces(APPLICATION_JSON)
     public List<User> getUsers(@RequestParam(name = "date" , required = false) String dateString){
         Date date = DateUtils.createDateFromDateString(dateString);
         return this.userDbService.getUserList();
