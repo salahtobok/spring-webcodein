@@ -9,6 +9,7 @@ public class GenericExceptionMapper implements ExceptionMapper<Exception> {
 
     @Override
     public Response toResponse(final Exception e) {
+        System.out.println("e.getClass().getSimpleName() = " + e.getClass().getSimpleName());
         return Response.serverError().entity(e.getMessage()).build();
     }
 }

@@ -1,5 +1,6 @@
 package com.webcodein.admin.config.webservice;
 
+import com.webcodein.admin.controller.GenericExceptionMapper;
 import com.webcodein.admin.endpoint.ClientRestController;
 import com.webcodein.admin.endpoint.UserRestController;
 import jakarta.annotation.PostConstruct;
@@ -13,8 +14,7 @@ public class JerseyConfiguration extends ResourceConfig {
 
     @PostConstruct
     public void init() {
-        register(ClientRestController.class);
-        register(UserRestController.class);
-        //register(GenericExceptionMapper.class);
+        packages("com.webcodein.admin.endpoint");
+        register(GenericExceptionMapper.class);
     }
 }
