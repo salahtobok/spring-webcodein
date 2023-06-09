@@ -17,6 +17,6 @@ public class ClientRestController {
     @GET
     @Produces(APPLICATION_JSON)
     public String getClients() {
-        return "HHHHHHHHHHHHHHHHH";
+        return "I'm your client";
     }
 }

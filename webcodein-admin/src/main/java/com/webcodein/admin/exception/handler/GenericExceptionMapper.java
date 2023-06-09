@@ -13,6 +13,6 @@ public class GenericExceptionMapper implements ExceptionMapper<Exception> {
         System.out.println("GenericExceptionMapper checked");
         return Response.status(Response.Status.BAD_REQUEST).entity(new RestResponse(
                 exception.getMessage(),
-                exception.getCause().getMessage())).build();
+                exception.getCause() != null ? exception.getCause().getMessage() : exception.getMessage())).build();
     }
 }

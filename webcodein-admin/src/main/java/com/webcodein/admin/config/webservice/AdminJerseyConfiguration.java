@@ -7,16 +7,10 @@ import jakarta.annotation.PostConstruct;
 import jakarta.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
-@Configuration
-@ApplicationPath("/api/v1/admin")
 public class AdminJerseyConfiguration extends ResourceConfig {
 
-    @PostConstruct
-    public void init() {
+    public AdminJerseyConfiguration() {
         packages("com.webcodein.admin.endpoint");
         register(GenericExceptionMapper.class);
         register(ConstraintViolationExceptionMapper.class);

@@ -4,7 +4,6 @@ package com.webcodein.admin.endpoint;
 import com.webcodein.admin.domain.User;
 import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.util.DateUtils;
-import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;

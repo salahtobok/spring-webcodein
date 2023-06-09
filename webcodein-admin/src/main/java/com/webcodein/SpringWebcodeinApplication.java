@@ -1,20 +1,13 @@
 package com.webcodein;
 
-import com.webcodein.admin.config.webservice.AdminJerseyConfiguration;
 import com.webcodein.admin.domain.Room;
 import com.webcodein.admin.repository.RoomRepository;
-import com.webcodein.common.config.webservice.CommonJerseyConfiguration;
-import org.glassfish.jersey.servlet.ServletContainer;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.web.servlet.JerseyApplicationPath;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.GetMapping;
