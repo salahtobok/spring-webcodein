@@ -34,7 +34,7 @@ public class UserSynchronizationService {
 
     @EventListener(AuthenticationSuccessEvent.class)
     public void onAuthenticationSuccessEvent(final AuthenticationSuccessEvent event) {
-        System.out.println("Hey *************** ");
+        System.out.println(" *************** AuthenticationSuccessEvent Checked *************** ");
         //final OidcUser oidcUser = ((OidcUser) event.getAuthentication().getPrincipal());
         //syncWithDatabase(oidcUser.getUserInfo());
     }
