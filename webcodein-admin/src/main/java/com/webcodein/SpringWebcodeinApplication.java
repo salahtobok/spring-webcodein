@@ -47,7 +47,7 @@ public class SpringWebcodeinApplication {
 		return KeycloakBuilder.builder()
 				.serverUrl("http://localhost:8543")
 				.realm("spring-boot")
-				.clientId("webcodein")
+				.clientId("webcodein-public")
 				.grantType(OAuth2Constants.PASSWORD)
 				.username("root")
 				.password("root")
