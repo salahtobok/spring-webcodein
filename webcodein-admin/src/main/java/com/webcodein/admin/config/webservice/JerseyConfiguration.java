@@ -1,11 +1,12 @@
 package com.webcodein.admin.config.webservice;
 
-import com.webcodein.admin.controller.GenericExceptionMapper;
-import com.webcodein.admin.endpoint.ClientRestController;
-import com.webcodein.admin.endpoint.UserRestController;
+import com.webcodein.admin.exception.handler.AccessDeniedExceptionMapper;
+import com.webcodein.admin.exception.handler.GenericExceptionMapper;
+import com.webcodein.admin.exception.handler.ConstraintViolationExceptionMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.ServerProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -15,6 +16,9 @@ public class JerseyConfiguration extends ResourceConfig {
     @PostConstruct
     public void init() {
         packages("com.webcodein.admin.endpoint");
-        register(GenericExceptionMapper.class);
+        //register(GenericExceptionMapper.class);
+        register(ConstraintViolationExceptionMapper.class);
+        register(AccessDeniedExceptionMapper.class);
+        property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
     }
 }
