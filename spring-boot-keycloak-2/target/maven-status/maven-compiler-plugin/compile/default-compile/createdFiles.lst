@@ -1,0 +1,9 @@
+com\baeldung\keycloak\adminclient\App.class
+com\baeldung\keycloak\customendpoint\KeycloakUserApiProvider.class
+com\baeldung\keycloak\customendpoint\KeycloakUserApiProviderFactory.class
+com\baeldung\disablingkeycloak\UserController.class
+com\baeldung\disablingkeycloak\App.class
+com\baeldung\disablingkeycloak\User.class
+com\baeldung\keycloak\adminclient\AdminClientService.class
+com\baeldung\disablingkeycloak\DisableSecurityConfiguration.class
+com\baeldung\disablingkeycloak\KeycloakSecurityConfig.class
