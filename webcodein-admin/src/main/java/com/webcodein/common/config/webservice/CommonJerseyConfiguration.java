@@ -4,19 +4,14 @@ import com.webcodein.admin.exception.handler.AccessDeniedExceptionMapper;
 import com.webcodein.admin.exception.handler.ConstraintViolationExceptionMapper;
 import com.webcodein.admin.exception.handler.GenericExceptionMapper;
 import com.webcodein.common.config.webservice.ServerFilters.CommonPreMatchRequestFilter;
-import jakarta.annotation.PostConstruct;
-import jakarta.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
-import org.springframework.context.annotation.Configuration;
 
 
-@ApplicationPath("/api/v1/common")
-@Configuration
+
 public class CommonJerseyConfiguration extends ResourceConfig {
 
-    @PostConstruct
-    public void init() {
+    public void CommonJerseyConfiguration() {
         register(CommonPreMatchRequestFilter.class);
         packages("com.webcodein.common.endpoint");
         register(GenericExceptionMapper.class);
@@ -25,3 +20,6 @@ public class CommonJerseyConfiguration extends ResourceConfig {
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
     }
 }
+
+
+
