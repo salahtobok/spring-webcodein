@@ -5,6 +5,8 @@ import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.SecurityContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -23,10 +25,14 @@ import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 @Path("/token")
 public class TokenRestController {
 
+    @Context
+    SecurityContext securityContext;
+
     @GET
     @Produces(APPLICATION_JSON)
     @RolesAllowed("front_common_function")
-    public Map<String,Object> getToken(@AuthenticationPrincipal Jwt jwt){
-        return Collections.singletonMap("principal",jwt);
+    public Map<String,Object> getToken(){
+
+        return Collections.singletonMap("principal",securityContext.getUserPrincipal());
     }
 }
