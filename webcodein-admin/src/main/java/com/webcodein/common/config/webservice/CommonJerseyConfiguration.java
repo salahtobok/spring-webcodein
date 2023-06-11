@@ -12,8 +12,8 @@ import org.glassfish.jersey.server.ServerProperties;
 public class CommonJerseyConfiguration extends ResourceConfig {
 
     public CommonJerseyConfiguration() {
-        register(CommonPreMatchRequestFilter.class);
         packages("com.webcodein.common.endpoint");
+        register(CommonPreMatchRequestFilter.class);
         register(GenericExceptionMapper.class);
         register(ConstraintViolationExceptionMapper.class);
         register(AccessDeniedExceptionMapper.class);
