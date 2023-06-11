@@ -32,6 +32,7 @@ public class TokenRestController {
     @Produces(APPLICATION_JSON)
     @RolesAllowed("front_common_function")
     public Map<String,Object> getToken(){
+        System.out.println("securityContext.isUserInRole(\"front_common_function\") = " + securityContext.isUserInRole("front_common_function"));
 
         return Collections.singletonMap("principal",securityContext.getUserPrincipal());
     }
