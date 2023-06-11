@@ -15,9 +15,10 @@ public class JerseyConfig {
                 = new ServletRegistrationBean(new ServletContainer(new CommonJerseyConfiguration()));
         commonJerseyConfiguration.addUrlMappings("/api/v1/common/*");
         commonJerseyConfiguration.setName("CommonJerseyConfiguration");
-        commonJerseyConfiguration.setLoadOnStartup(0);
+        commonJerseyConfiguration.setLoadOnStartup(1);
         return commonJerseyConfiguration;
     }
+
 
 
     @Bean
@@ -26,9 +27,10 @@ public class JerseyConfig {
                 = new ServletRegistrationBean(new ServletContainer(new AdminJerseyConfiguration()));
         adminJerseyConfiguration.addUrlMappings("/api/v1/admin/*");
         adminJerseyConfiguration.setName("AdminJerseyConfiguration");
-        adminJerseyConfiguration.setLoadOnStartup(0);
+        adminJerseyConfiguration.setLoadOnStartup(1);
         return adminJerseyConfiguration;
     }
+
 
 
 }
