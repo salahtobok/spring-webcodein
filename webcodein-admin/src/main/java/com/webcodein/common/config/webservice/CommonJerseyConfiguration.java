@@ -20,6 +20,3 @@ public class CommonJerseyConfiguration extends ResourceConfig {
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
     }
 }
-
-
-
