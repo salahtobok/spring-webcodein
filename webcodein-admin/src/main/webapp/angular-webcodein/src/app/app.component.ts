@@ -3,6 +3,8 @@ import Keycloak from "keycloak-js";
 import {OAuthService} from "angular-oauth2-oidc";
 import {AdminService} from "../admin.service";
 import {authConfig} from "../auth.config";
+import {MatDialog} from "@angular/material/dialog";
+import {UserAddEditComponent} from "./components/user-add-edit/user-add-edit.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit{
   title = 'webcodein';
 
 
-  constructor(private oauthService: OAuthService,private adminService : AdminService) {
+  constructor(private oauthService: OAuthService,private adminService : AdminService,private _dialog : MatDialog) {
     this.configure();
   }
 
@@ -54,5 +56,8 @@ export class AppComponent implements OnInit{
       .subscribe(rooms => console.log(rooms));
   }
 
+  openUserAddEditForm(){
+    this._dialog.open(UserAddEditComponent)
+  }
 
 }

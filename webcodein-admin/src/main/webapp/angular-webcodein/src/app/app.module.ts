@@ -10,11 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import { UserAddEditComponent } from './components/user-add-edit/user-add-edit.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    LogInComponent,
+    UserAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import {MatButtonModule} from "@angular/material/button";
       }
     }),
     BrowserAnimationsModule,
-    MatToolbarModule, MatButtonModule, MatIconModule
+    MatToolbarModule, MatButtonModule, MatIconModule,MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
