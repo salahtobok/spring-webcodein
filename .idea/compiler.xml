@@ -22,10 +22,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="spring-boot-keycloak" options="-parameters" />
-      <module name="spring-boot-keycloak-2" options="-parameters" />
+      <module name="spring-boot-keycloak" options="" />
+      <module name="spring-boot-keycloak-2" options="" />
       <module name="spring-webcodein-admin" options="" />
-      <module name="webcodein-admin" options="-parameters" />
+      <module name="webcodein-admin" options="" />
     </option>
   </component>
 </project>
