@@ -6,12 +6,17 @@ import {AppComponent} from './app.component';
 import {LogInComponent} from './components/log-in/log-in.component';
 import {HttpClientModule} from "@angular/common/http";
 import {OAuthModule} from "angular-oauth2-oidc";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
-import { UserAddEditComponent } from './components/user-add-edit/user-add-edit.component';
+import {UserAddEditComponent} from './components/user-add-edit/user-add-edit.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInput, MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -30,9 +35,11 @@ import {MatDialogModule} from "@angular/material/dialog";
       }
     }),
     BrowserAnimationsModule,
-    MatToolbarModule, MatButtonModule, MatIconModule,MatDialogModule
+    MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatDatepickerModule,
+    MatNativeDateModule, MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
