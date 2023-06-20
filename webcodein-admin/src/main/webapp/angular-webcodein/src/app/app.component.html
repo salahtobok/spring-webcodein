@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <span>Webcodein Admin</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="accent" (click)="openUserAddEditForm()" style="justify-content: right">Add User
+  <button mat-raised-button color="accent" (click)="openUserAddForm()" style="justify-content: right">Add User
   </button>
 </mat-toolbar>
 
@@ -73,10 +73,10 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> action</th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="openUserEditForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn">
+          <button mat-icon-button color="warn" (click)="deleteUser(row.id)" >
             <mat-icon>delete</mat-icon>
           </button>
         </td>

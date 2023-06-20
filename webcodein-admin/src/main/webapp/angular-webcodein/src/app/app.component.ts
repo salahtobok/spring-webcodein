@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import Keycloak from "keycloak-js";
 import {OAuthService} from "angular-oauth2-oidc";
 import {AdminService} from "../admin.service";
 import {authConfig} from "../auth.config";
-import {MatDialog} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {UserAddEditComponent} from "./components/user-add-edit/user-add-edit.component";
 import {UserService} from "./services/user.service";
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
@@ -12,12 +12,14 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {User} from "./dtos/user";
+import {Observable} from "rxjs";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'webcodein';
   displayedColumns: string[] = [
     'id',
@@ -36,8 +38,8 @@ export class AppComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private oauthService: OAuthService,private adminService : AdminService,private _dialog : MatDialog
-  ,private _userService: UserService) {
+  constructor(private oauthService: OAuthService, private adminService: AdminService, private _dialog: MatDialog
+    , private _userService: UserService) {
     this.configure();
   }
 
@@ -47,11 +49,11 @@ export class AppComponent implements OnInit{
   });
 
   ngOnInit(): void {
-/*    console.log("============================")
-    this.keycloak.init({
-      onLoad: 'login-required',
-      silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
-    })*/
+    /*    console.log("============================")
+        this.keycloak.init({
+          onLoad: 'login-required',
+          silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
+        })*/
     this.getUserList()
   }
 
@@ -71,29 +73,11 @@ export class AppComponent implements OnInit{
   }
 
 
-
   fetchRooms(): void {
     console.log(this.keycloak.token)
 
     this.adminService.getRooms()
       .subscribe(rooms => console.log(rooms));
-  }
-
-  openUserAddEditForm(){
-    this._dialog.open(UserAddEditComponent)
-  }
-
-
-  getUserList(){
-    this._userService.getUsersList().subscribe({
-      next : (res) => {
-        console.log(res)
-        this.dataSource = new MatTableDataSource(res)
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      },
-      error : console.log
-    })
   }
 
 
@@ -104,5 +88,50 @@ export class AppComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openUserAddForm() {
+    const dialogRef = this._dialog.open(UserAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next : (value) => {
+        if (value){
+          this.getUserList();
+        }
+      }
+    })
+  }
+
+  openUserEditForm(data : any) {
+    const dialogRef = this._dialog.open(UserAddEditComponent,{data,});
+    dialogRef.afterClosed().subscribe({
+      next : (value) => {
+        if (value){
+          this.getUserList();
+        }
+      }
+    })
+  }
+
+
+  getUserList() {
+    this._userService.getUsersList().subscribe({
+      next: (res) => {
+        console.log(res)
+        this.dataSource = new MatTableDataSource(res)
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error: console.log
+    })
+  }
+
+
+  deleteUser(id: number) {
+    this._userService.deleteUser(id).subscribe({
+      next: (res) => {
+        alert('User deleted');
+        this.getUserList();
+      }, error: console.log
+    })
   }
 }

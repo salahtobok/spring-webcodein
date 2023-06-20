@@ -17,11 +17,21 @@ export class UserService {
     return this._http.post(this.apiHostUrl + "/users", data);
   }
 
+
+  updateUser(id: number ,data: any): Observable<any> {
+    return this._http.put(this.apiHostUrl +`/users/${id}` , data);
+  }
+
   getUsersList(): Observable<any> {
     return this._http.get(this.apiHostUrl+"/users")
   }
 
   getUser(id: any): Observable<any> {
     return this._http.get(this.apiHostUrl+"/users ",id)
+  }
+
+  deleteUser(id: number): Observable<any> {
+    console.log("id => "+id)
+    return this._http.delete(this.apiHostUrl+`/users/${id}`)
   }
 }

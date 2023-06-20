@@ -1,7 +1,7 @@
 <div mat-dialog-title>
   <h1>User form</h1>
 </div>
-<form [formGroup]="userAddEditForm" (ngSubmit)="onUserAddEditFormSubmit()">
+<form [formGroup]="userForm" (ngSubmit)="onUserFormSubmit()">
   <div mat-dialog-content class="content">
     <div class="row">
       <mat-form-field appearance="outline">
@@ -53,7 +53,7 @@
     </div>
   </div>
   <div mat-dialog-actions class="action">
-    <button mat-raised-button>Cancel</button>
-    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button type="button" mat-dialog-close="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save' }}</button>
   </div>
 </form>
