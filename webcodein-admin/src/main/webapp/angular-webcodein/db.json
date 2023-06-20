@@ -34,6 +34,17 @@
       "company": "dddddddddd",
       "experience": "ddddddddddddddddddd",
       "id": 1
+    },
+    {
+      "firstName": "cdvq",
+      "lastName": "vsqvqs",
+      "email": "vsqvqsvqs",
+      "dob": "2023-06-20T23:00:00.000Z",
+      "gender": "2",
+      "education": "Diploma",
+      "company": "vqsvqs",
+      "experience": "vqsvqs",
+      "id": 2
     }
   ]
 }
