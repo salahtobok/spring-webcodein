@@ -1,7 +1,7 @@
 package com.webcodein.admin.endpoint;
 
 
-import com.webcodein.admin.domain.User;
+import com.webcodein.admin.entity.User;
 import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.util.DateUtils;
 import jakarta.ws.rs.GET;

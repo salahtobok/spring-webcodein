@@ -1,6 +1,6 @@
 package com.webcodein.admin.repository;
 
-import com.webcodein.admin.domain.User;
+import com.webcodein.admin.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

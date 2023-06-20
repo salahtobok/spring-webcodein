@@ -1,6 +1,6 @@
 #FileLock
-#Sun Jun 11 14:21:42 WAT 2023
-server=192.168.1.60\:54546
-hostName=DESKTOP-FP5R9ML.bbrouter
+#Tue Jun 20 23:24:03 WAT 2023
+server=192.168.1.6\:50423
+hostName=DESKTOP-FP5R9ML
 method=file
-id=188aa9ea0f7a7ee5485b21872ea48467abb40204431
+id=188dae85bbc46dc3e0e53d13e4fdf7d18f58f60f50e

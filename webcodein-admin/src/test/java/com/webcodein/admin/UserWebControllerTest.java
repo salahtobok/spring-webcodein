@@ -2,7 +2,6 @@ package com.webcodein.admin;
 
 
 import com.webcodein.admin.controller.UserWebController;
-import com.webcodein.admin.domain.User;
 import com.webcodein.admin.service.UserDbService;
 import com.webcodein.admin.util.DateUtils;
 import org.junit.Test;
