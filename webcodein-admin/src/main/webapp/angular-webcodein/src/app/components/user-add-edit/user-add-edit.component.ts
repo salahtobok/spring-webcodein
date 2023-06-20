@@ -32,4 +32,9 @@ export class UserAddEditComponent {
     })
   }
 
+  onUserAddEditFormSubmit() {
+    if (this.userAddEditForm.valid){
+      console.log(this.userAddEditForm.value)
+    }
+  }
 }
