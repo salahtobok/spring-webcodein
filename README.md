@@ -26,3 +26,10 @@ keytool -genkey -alias webcodein-ks -storetype PKCS12 -keyalg RSA -keysize 2048 
 --
 Keycloak : 
 Login : salahtobok Password : root
+
+-- JSON Server Node.js CI
+<pre>
+Get a full fake REST API with zero coding in less than 30 seconds (seriously)<br>
+Install JSON Server : npm install -g json-server<br>
+Start JSON Server : json-server --watch db.json<br>
+</pre>
