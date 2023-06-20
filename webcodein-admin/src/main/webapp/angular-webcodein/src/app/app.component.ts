@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {User} from "./dtos/user";
 import {Observable} from "rxjs";
+import {CoreService} from "./services/core.service";
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private oauthService: OAuthService, private adminService: AdminService, private _dialog: MatDialog
-    , private _userService: UserService) {
+    , private _userService: UserService,private _coreService:CoreService) {
     this.configure();
   }
 
@@ -129,7 +130,7 @@ export class AppComponent implements OnInit {
   deleteUser(id: number) {
     this._userService.deleteUser(id).subscribe({
       next: (res) => {
-        alert('User deleted');
+        this._coreService.openSnackBar("User deleted","Done")
         this.getUserList();
       }, error: console.log
     })

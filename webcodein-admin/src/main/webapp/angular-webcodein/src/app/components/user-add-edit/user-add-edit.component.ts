@@ -4,6 +4,7 @@ import {UserService} from "../../services/user.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {User} from "../../dtos/user";
+import {CoreService} from "../../services/core.service";
 
 @Component({
   selector: 'app-user-add-edit',
@@ -23,7 +24,7 @@ export class UserAddEditComponent implements OnInit {
   ]
 
   constructor(private _fb: FormBuilder, private _userService: UserService, private _dialogRef: MatDialogRef<UserAddEditComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: User) {
+    , @Inject(MAT_DIALOG_DATA) public data: User,private _coreService:CoreService) {
     this.userForm = this._fb.group({
       firstName: '',
       lastName: '',
@@ -47,7 +48,7 @@ export class UserAddEditComponent implements OnInit {
       if (this.data == null) {
         this._userService.addUser(this.userForm.value).subscribe({
           next: (value: any) => {
-            alert("User added successfully");
+            this._coreService.openSnackBar("User added successfully","Done")
             this._dialogRef.close(true)
           },
           error: (error: any) => {
@@ -58,7 +59,7 @@ export class UserAddEditComponent implements OnInit {
         console.log(this.userForm.value)
         this._userService.updateUser(this.data.id, this.userForm.value).subscribe({
           next: (value: any) => {
-            alert("User updated successfully");
+            this._coreService.openSnackBar("User updated successfully","Done")
             this._dialogRef.close(true)
           },
           error: (error: any) => {

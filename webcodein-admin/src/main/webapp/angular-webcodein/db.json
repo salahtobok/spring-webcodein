@@ -47,26 +47,15 @@
       "id": 3
     },
     {
-      "firstName": "ddddddd",
-      "lastName": "ddddddddddddddddddddddd",
-      "email": "sssssssssss",
-      "dob": "2023-06-13T23:00:00.000Z",
-      "gender": "2",
-      "education": "Graduate",
-      "company": "dddddddddd",
-      "experience": "dddddd",
+      "firstName": "dddddddd",
+      "lastName": "ddddddddddd",
+      "email": "ddddddddddddddddd",
+      "dob": "2023-06-05T23:00:00.000Z",
+      "gender": "1",
+      "education": "Diploma",
+      "company": "sssssssssssss",
+      "experience": "sssssssssssss",
       "id": 4
-    },
-    {
-      "firstName": "hreherh",
-      "lastName": "herher",
-      "email": "hreherhe",
-      "dob": "2023-06-14T23:00:00.000Z",
-      "gender": "2",
-      "education": "Post Graduate",
-      "company": "herher",
-      "experience": "hreher",
-      "id": 5
     }
   ]
 }
