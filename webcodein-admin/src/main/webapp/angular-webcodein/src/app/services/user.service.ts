@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class UserService {
 
-  private readonly apiHostUrl = "http://localhost:3000";
+  private readonly apiHostUrl = "https://localhost:8081/api/v1";
 
 
   constructor(private _http: HttpClient) {
@@ -23,7 +23,7 @@ export class UserService {
   }
 
   getUsersList(): Observable<any> {
-    return this._http.get(this.apiHostUrl+"/users")
+    return this._http.get(this.apiHostUrl+"/admin/users")
   }
 
   getUser(id: any): Observable<any> {

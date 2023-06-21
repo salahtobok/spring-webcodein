@@ -8,6 +8,9 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -20,14 +23,21 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
+        http.cors().configurationSource(request -> {
+                    var cors = new CorsConfiguration();
+                    cors.setAllowedOrigins(List.of("https://localhost:4200", "http://127.0.0.1:80", "http://example.com"));
+                    cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
+                    cors.setAllowedHeaders(List.of("*"));
+                    return cors;
+                }).and()
                 .csrf()
                     .disable()
                 .authorizeHttpRequests(registry -> {
                     try {
                         registry
                                 .requestMatchers("/sayHelloApi").hasRole("USER")
-                                .anyRequest().authenticated().and().oauth2Login();
+                                .anyRequest().authenticated();
+                                //.and().oauth2Login();
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }

@@ -3,7 +3,7 @@ import {AuthConfig} from 'angular-oauth2-oidc';
 export const   authConfig: AuthConfig = {
   issuer: 'http://localhost:8543/realms/spring-boot',
   redirectUri: window.location.origin + "/",
-  clientId: 'webcodein',
+  clientId: 'webcodein-public',
   scope: 'openid',
   responseType: 'code',
   strictDiscoveryDocumentValidation : true,

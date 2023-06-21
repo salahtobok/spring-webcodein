@@ -38,7 +38,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     AppRoutingModule,
     OAuthModule.forRoot({
       resourceServer: {
-        allowedUrls: ['http://localhost:8080/api'],
+        allowedUrls: ['https://localhost:8081/api/v1'],
         sendAccessToken: true
       }
     }),

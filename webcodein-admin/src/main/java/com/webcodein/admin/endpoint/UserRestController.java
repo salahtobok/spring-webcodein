@@ -10,6 +10,7 @@ import jakarta.ws.rs.Produces;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
@@ -32,8 +33,8 @@ public class UserRestController {
 
     @GET
     @Produces(APPLICATION_JSON)
-    public Iterable<User> getUsers(@RequestParam(name = "date" , required = false) String dateString){
-        Date date = DateUtils.createDateFromDateString(dateString);
+    public Iterable<User> getUsers(){
+        System.out.println("\"Get Users Functions loaded\"");
         return this.userDbService.getUserList();
     }
 }

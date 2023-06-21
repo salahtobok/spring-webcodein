@@ -52,6 +52,9 @@ export class UserManagementComponent implements OnInit {
           onLoad: 'login-required',
           silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
         })*/
+    if (!this.oauthService.hasValidIdToken())
+      this.oauthService.initLoginFlow();
+
     this.getUserList()
   }
 

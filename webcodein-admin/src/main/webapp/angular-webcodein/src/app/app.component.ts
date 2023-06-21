@@ -47,12 +47,6 @@ export class AppComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    /*    console.log("============================")
-        this.keycloak.init({
-          onLoad: 'login-required',
-          silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
-        })*/
-    this.getUserList()
   }
 
   public login() {
@@ -71,65 +65,8 @@ export class AppComponent implements OnInit {
   }
 
 
-  fetchRooms(): void {
-    console.log(this.keycloak.token)
-
-    this.adminService.getRooms()
-      .subscribe(rooms => console.log(rooms));
-  }
 
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
-  openUserAddForm() {
-    const dialogRef = this._dialog.open(UserAddEditComponent);
-    dialogRef.afterClosed().subscribe({
-      next : (value) => {
-        if (value){
-          this.getUserList();
-        }
-      }
-    })
-  }
-
-  openUserEditForm(data : any) {
-    const dialogRef = this._dialog.open(UserAddEditComponent,{data,});
-    dialogRef.afterClosed().subscribe({
-      next : (value) => {
-        if (value){
-          this.getUserList();
-        }
-      }
-    })
-  }
 
 
-  getUserList() {
-    this._userService.getUsersList().subscribe({
-      next: (res) => {
-        console.log(res)
-        this.dataSource = new MatTableDataSource(res)
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      },
-      error: console.log
-    })
-  }
-
-
-  deleteUser(id: number) {
-    this._userService.deleteUser(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar("User deleted","Done")
-        this.getUserList();
-      }, error: console.log
-    })
-  }
 }
