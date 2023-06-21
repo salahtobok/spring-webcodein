@@ -31,10 +31,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     CommonModule,
     LandingRoutingModule,
-    MatDividerModule,MatIconModule,MatGridListModule,MatButtonModule,MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule,
-    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatRadioModule, MatSelectModule,ReactiveFormsModule,
-    HttpClientModule, MatPaginatorModule,MatPaginatorModule,MatSortModule,MatTableModule,MatInputModule, MatFormFieldModule,
-    MatSnackBarModule,MatGridListModule,MatDividerModule
+    MatGridListModule,
+    MatIconModule,
+    MatButtonModule
   ],
 })
 export class LandingModule { }
