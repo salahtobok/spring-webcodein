@@ -32,7 +32,7 @@ public class UserRestController {
 
     @GET
     @Produces(APPLICATION_JSON)
-    public List<User> getUsers(@RequestParam(name = "date" , required = false) String dateString){
+    public Iterable<User> getUsers(@RequestParam(name = "date" , required = false) String dateString){
         Date date = DateUtils.createDateFromDateString(dateString);
         return this.userDbService.getUserList();
     }

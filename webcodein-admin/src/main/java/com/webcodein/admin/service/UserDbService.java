@@ -20,10 +20,10 @@ public class UserDbService {
         this.userRepository = userRepository;
     }
 
-    public List<User> getUserList(){
+    public Iterable<User> getUserList(){
         Iterable<User> userIterable = this.userRepository.findAll();
         List<User> userList = new ArrayList<>();
         userIterable.forEach(userList::add);
-        return userList;
+        return userIterable;
     }
 }  
