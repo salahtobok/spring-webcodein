@@ -1,18 +1,15 @@
-import {Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import Keycloak from "keycloak-js";
 import {OAuthService} from "angular-oauth2-oidc";
 import {AdminService} from "../admin.service";
 import {authConfig} from "../auth.config";
-import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {UserAddEditComponent} from "./components/user-add-edit/user-add-edit.component";
 import {UserService} from "./services/user.service";
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 import {User} from "./dtos/user";
-import {Observable} from "rxjs";
 import {CoreService} from "./services/core.service";
 
 @Component({

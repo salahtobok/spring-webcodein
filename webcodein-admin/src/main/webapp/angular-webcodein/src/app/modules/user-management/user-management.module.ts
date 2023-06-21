@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { UserManagementRoutingModule } from './user-management-routing.module';
+import {UserManagementRoutingModule} from './user-management-routing.module';
 import {UserManagementComponent} from "../../components/user-management/user-management.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatDividerModule} from "@angular/material/divider";

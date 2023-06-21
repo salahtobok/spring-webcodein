@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { LandingRoutingModule } from './landing-routing.module';
+import {LandingRoutingModule} from './landing-routing.module';
 import {LandingComponent} from "../../components/landing/landing.component";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatIconModule} from "@angular/material/icon";
@@ -22,8 +22,6 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {UserAddEditComponent} from "../../components/user-add-edit/user-add-edit.component";
-import {AppComponent} from "../../app.component";
 
 
 @NgModule({
