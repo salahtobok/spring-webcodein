@@ -27,23 +27,25 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatDividerModule} from "@angular/material/divider";
 import { LandingComponent } from './components/landing/landing.component';
 import {LandingModule} from "./modules/landing/landing.module";
+import { UserManagementComponent } from './components/user-management/user-management.component';
+import {UserManagementModule} from "./modules/user-management/user-management.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    LogInComponent,
   ],
   imports: [
-    LandingModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     OAuthModule.forRoot({
       resourceServer: {
         allowedUrls: ['http://localhost:8080/api'],
         sendAccessToken: true
       }
-    })
+    }),
+    LandingModule,
+    UserManagementModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

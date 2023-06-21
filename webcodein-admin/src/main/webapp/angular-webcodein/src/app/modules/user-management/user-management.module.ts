@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LandingRoutingModule } from './landing-routing.module';
-import {LandingComponent} from "../../components/landing/landing.component";
+import { UserManagementRoutingModule } from './user-management-routing.module';
+import {UserManagementComponent} from "../../components/user-management/user-management.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatIconModule} from "@angular/material/icon";
 import {MatGridListModule} from "@angular/material/grid-list";
@@ -21,18 +22,17 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UserAddEditComponent} from "../../components/user-add-edit/user-add-edit.component";
-import {AppComponent} from "../../app.component";
 
 
 @NgModule({
   declarations: [
-    LandingComponent,
+    UserManagementComponent,
+    UserAddEditComponent
   ],
   imports: [
     CommonModule,
-    LandingRoutingModule,
+    UserManagementRoutingModule,
     BrowserAnimationsModule,
     MatDividerModule,
     MatIconModule,
@@ -44,6 +44,6 @@ import {AppComponent} from "../../app.component";
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,MatSnackBarModule,MatGridListModule,MatDividerModule
-  ],
+  ]
 })
-export class LandingModule { }
+export class UserManagementModule { }
