@@ -7,6 +7,7 @@ import {LogInComponent} from './components/log-in/log-in.component';
 import {OAuthModule} from "angular-oauth2-oidc";
 import {LandingModule} from "./modules/landing/landing.module";
 import {UserManagementModule} from "./modules/user-management/user-management.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {UserManagementModule} from "./modules/user-management/user-management.mo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     OAuthModule.forRoot({
       resourceServer: {

@@ -33,17 +33,10 @@ import {UserAddEditComponent} from "../../components/user-add-edit/user-add-edit
   imports: [
     CommonModule,
     UserManagementRoutingModule,
-    BrowserAnimationsModule,
-    MatDividerModule,
-    MatIconModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatDatepickerModule,
-    MatNativeDateModule, MatRadioModule, MatSelectModule,ReactiveFormsModule, HttpClientModule, MatPaginatorModule,MatPaginatorModule,
-    MatSortModule,
-    MatTableModule,
-    MatInputModule,
-    MatFormFieldModule,MatSnackBarModule,MatGridListModule,MatDividerModule
+    MatDividerModule,MatIconModule,MatGridListModule,MatButtonModule,MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule,
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatRadioModule, MatSelectModule,ReactiveFormsModule,
+    HttpClientModule, MatPaginatorModule,MatPaginatorModule,MatSortModule,MatTableModule,MatInputModule, MatFormFieldModule,
+    MatSnackBarModule,MatGridListModule,MatDividerModule
   ]
 })
 export class UserManagementModule { }
