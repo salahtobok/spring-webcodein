@@ -26,15 +26,15 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatDividerModule} from "@angular/material/divider";
 import { LandingComponent } from './components/landing/landing.component';
+import {LandingModule} from "./modules/landing/landing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent,
-    UserAddEditComponent,
-    LandingComponent
+    LogInComponent
   ],
   imports: [
+    LandingModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -43,14 +43,7 @@ import { LandingComponent } from './components/landing/landing.component';
         allowedUrls: ['http://localhost:8080/api'],
         sendAccessToken: true
       }
-    }),
-    BrowserAnimationsModule,
-    MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatDatepickerModule,
-    MatNativeDateModule, MatRadioModule, MatSelectModule,ReactiveFormsModule, HttpClientModule, MatPaginatorModule,MatPaginatorModule,
-    MatSortModule,
-    MatTableModule,
-    MatInputModule,
-    MatFormFieldModule,MatSnackBarModule,MatGridListModule,MatDividerModule
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
