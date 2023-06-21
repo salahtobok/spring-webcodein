@@ -23,12 +23,16 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatDividerModule} from "@angular/material/divider";
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    UserAddEditComponent
+    UserAddEditComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatSortModule,
     MatTableModule,
     MatInputModule,
-    MatFormFieldModule,MatSnackBarModule
+    MatFormFieldModule,MatSnackBarModule,MatGridListModule,MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
