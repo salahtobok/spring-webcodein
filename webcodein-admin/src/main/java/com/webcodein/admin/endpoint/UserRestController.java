@@ -52,6 +52,6 @@ public class UserRestController {
     public Response create(@Valid UserDto userDto) {
         Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "REST request to save the user : {}", userDto);
         UserDto resultedUserDto = userDbService.create(userDto);
-        return Response.status(Response.Status.OK).entity(resultedUserDto).build();
+        return Response.ok(resultedUserDto, MediaType.APPLICATION_JSON).build();
     }
 }
