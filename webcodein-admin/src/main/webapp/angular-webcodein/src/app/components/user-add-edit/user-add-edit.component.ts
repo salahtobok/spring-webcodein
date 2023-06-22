@@ -38,6 +38,7 @@ export class UserAddEditComponent implements OnInit {
             this._dialogRef.close(true)
           },
           error: (error: any) => {
+            this._coreService.openSnackBar("Error while adding the user","Done")
             console.log(error)
           }
         })
@@ -49,6 +50,7 @@ export class UserAddEditComponent implements OnInit {
             this._dialogRef.close(true)
           },
           error: (error: any) => {
+            this._coreService.openSnackBar("Error while updating the user","Done")
             console.log(error)
           }
         })
