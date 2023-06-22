@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Data
+@ToString
 public class UserDto extends BasicEntity implements Serializable, Cloneable {
 
     private String uuid;

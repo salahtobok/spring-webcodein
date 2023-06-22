@@ -8,6 +8,8 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.servlet.ServletProperties;
 
+import java.util.Collections;
+
 
 public class CommonJerseyConfiguration extends ResourceConfig {
 
@@ -17,7 +19,9 @@ public class CommonJerseyConfiguration extends ResourceConfig {
         register(GenericExceptionMapper.class);
         register(ConstraintViolationExceptionMapper.class);
         register(AccessDeniedExceptionMapper.class);
-        property(ServletProperties.FILTER_FORWARD_ON_404, true);
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
+        property(ServletProperties.FILTER_FORWARD_ON_404, true);
+        setProperties(Collections.singletonMap("jersey.config.server.response.setStatusOverSendError", true));
+
     }
 }
