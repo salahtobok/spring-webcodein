@@ -14,9 +14,8 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
-//@ExcludeDefaultListeners
 @EntityListeners(AuditTrailListener.class)
-public abstract class AuditedEntity implements Serializable {
+public abstract class BasicEntity implements Serializable {
 
 
     @Temporal(TemporalType.TIMESTAMP)

@@ -1,8 +1,7 @@
-package com.webcodein.admin.entity;
+package com.webcodein.admin.data.entity;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.webcodein.common.data.config.DbSchema;
-import com.webcodein.common.data.entity.AuditedEntity;
+import com.webcodein.common.data.entity.BasicEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -11,11 +10,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.keycloak.json.StringListMapDeserializer;
-import org.keycloak.representations.idm.CredentialRepresentation;
-import org.keycloak.representations.idm.FederatedIdentityRepresentation;
-import org.keycloak.representations.idm.SocialLinkRepresentation;
-import org.keycloak.representations.idm.UserConsentRepresentation;
 
 import javax.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
@@ -26,7 +20,7 @@ import java.util.*;
 @EqualsAndHashCode(of = "id", doNotUseGetters = true)
 @Entity
 @Table(name = "admin_user", schema = DbSchema.ADMINISTRATION_SCHEMA)
-public class User extends AuditedEntity implements Serializable, Cloneable {
+public class User extends BasicEntity implements Serializable, Cloneable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,17 +61,6 @@ public class User extends AuditedEntity implements Serializable, Cloneable {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Transient
-    @JsonbTransient
-    protected List<String> realmRoles;
-
-    @Transient
-    @JsonbTransient
-    protected Map<String, List<String>> clientRoles;
-
-    @Transient
-    @JsonbTransient
-    protected List<String> groups;
 
     private String phone;
 

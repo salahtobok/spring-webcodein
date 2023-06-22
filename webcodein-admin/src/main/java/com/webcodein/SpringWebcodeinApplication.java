@@ -1,6 +1,6 @@
 package com.webcodein;
 
-import com.webcodein.admin.domain.Room;
+import com.webcodein.admin.data.domain.Room;
 import com.webcodein.admin.repository.RoomRepository;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
@@ -23,6 +23,7 @@ public class SpringWebcodeinApplication {
 		SpringApplication.run(SpringWebcodeinApplication.class, args);
 	}
 
+/*
 
 	@RestController
 	@RequestMapping("/rooms")
@@ -35,11 +36,13 @@ public class SpringWebcodeinApplication {
 			return this.roomRepository.findAll();
 		}
 	}
-
+*/
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+
 
 
 	@Bean
@@ -53,6 +56,7 @@ public class SpringWebcodeinApplication {
 				.password("root")
 				.build();
 	}
+
 
 
 	/**

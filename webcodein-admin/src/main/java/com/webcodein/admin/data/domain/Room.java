@@ -1,4 +1,4 @@
-package com.webcodein.admin.domain;
+package com.webcodein.admin.data.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
