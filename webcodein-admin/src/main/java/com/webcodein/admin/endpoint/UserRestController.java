@@ -7,14 +7,12 @@ import com.webcodein.admin.util.DateUtils;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Date;
-import java.util.List;
 
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -32,9 +30,9 @@ public class UserRestController {
     }
 
     @GET
-    @Produces(APPLICATION_JSON)
-    public Iterable<User> getUsers(){
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public Response getUsers(){
         System.out.println("\"Get Users Functions loaded\"");
-        return this.userDbService.getUserList();
+        return Response.ok(this.userDbService.getUserList(), MediaType.APPLICATION_JSON).build();
     }
 }
