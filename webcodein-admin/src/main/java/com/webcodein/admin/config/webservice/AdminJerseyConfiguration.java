@@ -7,7 +7,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
-
+import org.glassfish.jersey.servlet.ServletProperties;
 
 
 public class AdminJerseyConfiguration extends ResourceConfig {
@@ -19,6 +19,7 @@ public class AdminJerseyConfiguration extends ResourceConfig {
 //        register(AccessDeniedExceptionMapper.class);
         register(JacksonFeature.class);
         register(MultiPartFeature.class);
+        property(ServletProperties.FILTER_FORWARD_ON_404, true);
 //        property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
     }
 }

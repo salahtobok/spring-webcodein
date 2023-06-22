@@ -28,16 +28,16 @@ public class User extends BasicEntity implements Serializable, Cloneable {
     private Long id;
 
     @NotNull
-    @Column(name = "uuid", nullable = false, unique = true)
+    @Column(name = "uuid", nullable = false)
     private String uuid;
 
     @JsonbTransient
-    @Column(unique = true)
+    @Column
     private String keycloakUUID;
 
     @NotNull
     @NotBlank
-    @Column(name = "username", unique = true)
+    @Column(name = "username")
     protected String username;
 
     protected Boolean enabled;
@@ -58,7 +58,7 @@ public class User extends BasicEntity implements Serializable, Cloneable {
     @Email
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = false)
     private String email;
 
 
