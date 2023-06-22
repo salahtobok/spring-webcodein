@@ -1,5 +1,6 @@
 package com.webcodein.admin.data.entity;
 
+import com.webcodein.admin.enums.Gender;
 import com.webcodein.common.data.config.DbSchema;
 import com.webcodein.common.data.entity.BasicEntity;
 import jakarta.persistence.*;
@@ -27,16 +28,13 @@ public class User extends BasicEntity implements Serializable, Cloneable {
     @JsonbTransient
     private Long id;
 
-    @NotNull
-    @Column(name = "uuid", nullable = false)
+    @Column(name = "uuid")
     private String uuid;
 
     @JsonbTransient
-    @Column
+    @Column(name = "keycloakUUID")
     private String keycloakUUID;
 
-    @NotNull
-    @NotBlank
     @Column(name = "username")
     protected String username;
 
@@ -44,19 +42,14 @@ public class User extends BasicEntity implements Serializable, Cloneable {
 
     protected Boolean emailVerified;
 
-    @NotNull
-    @NotBlank
     @Size(min = 1, max = 100)
     protected String firstName;
 
-    @NotNull
-    @NotBlank
     @Size(min = 1, max = 100)
     protected String lastName;
 
 
     @Email
-    @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "email", nullable = false)
     private String email;
@@ -65,5 +58,12 @@ public class User extends BasicEntity implements Serializable, Cloneable {
     private String phone;
 
     private String mobile;
+
+
+    @Temporal(TemporalType.DATE)
+    private Date dob;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
 }

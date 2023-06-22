@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import Keycloak from "keycloak-js";
 import {OAuthService} from "angular-oauth2-oidc";
-import {AdminService} from "../admin.service";
 import {authConfig} from "../auth.config";
 import {MatDialog} from "@angular/material/dialog";
 import {UserAddEditComponent} from "./components/user-add-edit/user-add-edit.component";
@@ -19,24 +18,8 @@ import {CoreService} from "./services/core.service";
 })
 export class AppComponent implements OnInit {
   title = 'webcodein';
-  displayedColumns: string[] = [
-    'id',
-    'firstName',
-    'lastName',
-    'email',
-    'dob',
-    'gender',
-    'education',
-    'company',
-    'experience',
-    'action'
-  ];
-  dataSource!: MatTableDataSource<User>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
-  constructor(private oauthService: OAuthService, private adminService: AdminService, private _dialog: MatDialog
+  constructor(private oauthService: OAuthService, private _dialog: MatDialog
     , private _userService: UserService,private _coreService:CoreService) {
     this.configure();
   }
@@ -63,10 +46,5 @@ export class AppComponent implements OnInit {
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
     this.oauthService.setupAutomaticSilentRefresh();
   }
-
-
-
-
-
 
 }

@@ -14,7 +14,7 @@ export class UserService {
   }
 
   addUser(data: any): Observable<any> {
-    return this._http.post(this.apiHostUrl + "/users", data);
+    return this._http.post(this.apiHostUrl + "/admin/users/create", data);
   }
 
 

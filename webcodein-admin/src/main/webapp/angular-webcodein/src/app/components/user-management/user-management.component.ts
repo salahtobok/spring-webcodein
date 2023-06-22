@@ -4,7 +4,6 @@ import {User} from "../../dtos/user";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {OAuthService} from "angular-oauth2-oidc";
-import {AdminService} from "../../../admin.service";
 import {MatDialog} from "@angular/material/dialog";
 import {UserService} from "../../services/user.service";
 import {CoreService} from "../../services/core.service";
@@ -26,9 +25,6 @@ export class UserManagementComponent implements OnInit {
     'email',
     'dob',
     'gender',
-    'education',
-    'company',
-    'experience',
     'action'
   ];
   dataSource!: MatTableDataSource<User>;
@@ -36,7 +32,7 @@ export class UserManagementComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private oauthService: OAuthService, private adminService: AdminService, private _dialog: MatDialog
+  constructor(private oauthService: OAuthService,private _dialog: MatDialog
     , private _userService: UserService,private _coreService:CoreService) {
     this.configure();
   }
@@ -73,13 +69,6 @@ export class UserManagementComponent implements OnInit {
     this.oauthService.setupAutomaticSilentRefresh();
   }
 
-
-  fetchRooms(): void {
-    console.log(this.keycloak.token)
-
-    this.adminService.getRooms()
-      .subscribe(rooms => console.log(rooms));
-  }
 
 
   applyFilter(event: Event) {

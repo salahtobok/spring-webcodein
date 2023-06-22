@@ -19,6 +19,8 @@ public class UserMapper {
         dto.setEmail(entity.getEmail());
         dto.setPhone(entity.getPhone());
         dto.setMobile(entity.getMobile());
+        dto.setDob(entity.getDob());
+        dto.setGender(entity.getGender());
     }
 
 
@@ -33,5 +35,7 @@ public class UserMapper {
         entity.setEmail(dto.getEmail());
         entity.setPhone(dto.getPhone());
         entity.setMobile(dto.getMobile());
+        entity.setDob(dto.getDob());
+        entity.setGender(dto.getGender());
     }
 }

@@ -13,15 +13,6 @@ import {CoreService} from "../../services/core.service";
 export class UserAddEditComponent implements OnInit {
   userForm: FormGroup;
 
-  education: string[] = [
-    'Metrics',
-    'Intermediate',
-    'Diploma',
-    'Intermediate',
-    'Graduate',
-    'Post Graduate'
-  ]
-
   constructor(private _fb: FormBuilder, private _userService: UserService, private _dialogRef: MatDialogRef<UserAddEditComponent>
     , @Inject(MAT_DIALOG_DATA) public data: User,private _coreService:CoreService) {
     this.userForm = this._fb.group({
@@ -30,10 +21,6 @@ export class UserAddEditComponent implements OnInit {
       email: '',
       dob: '',
       gender: '',
-      education: '',
-      company: '',
-      experience: ''
-
     })
   }
 

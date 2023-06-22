@@ -39,6 +39,7 @@ public class UserRestController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(@Valid UserDto userDto) throws Exception {
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "REST request to save the user : {}", userDto);
+        System.out.println("userDto = " + userDto);
         UserDto resultedUserDto = userDbService.create(userDto);
         return Response.ok(resultedUserDto, MediaType.APPLICATION_JSON).build();
     }

@@ -29,27 +29,9 @@
     <div class="row">
       <mat-radio-group aria-label="Select an option" formControlName="gender">
         <mat-label>Gender</mat-label>
-        <mat-radio-button value="1">Male</mat-radio-button>
-        <mat-radio-button value="2">Female</mat-radio-button>
+        <mat-radio-button value="MALE">Male</mat-radio-button>
+        <mat-radio-button value="FEMALE">Female</mat-radio-button>
       </mat-radio-group>
-    </div>
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Education</mat-label>
-        <mat-select formControlName="education">
-          <mat-option *ngFor="let e of education" [value]="e">{{e}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Company</mat-label>
-        <input matInput type="text" placeholder="Ex. Microsoft" formControlName="company">
-      </mat-form-field>
-    </div>
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Experience</mat-label>
-        <textarea matInput placeholder="Ex. I worked in ..." formControlName="experience"></textarea>
-      </mat-form-field>
     </div>
   </div>
   <div mat-dialog-actions class="action">

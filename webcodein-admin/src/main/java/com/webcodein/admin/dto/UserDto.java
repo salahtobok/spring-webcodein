@@ -1,5 +1,6 @@
 package com.webcodein.admin.dto;
 
+import com.webcodein.admin.enums.Gender;
 import com.webcodein.common.data.entity.BasicEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -11,6 +12,7 @@ import lombok.ToString;
 
 import javax.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -34,14 +36,13 @@ public class UserDto extends BasicEntity implements Serializable, Cloneable {
 
     private String email;
 
-    protected List<String> realmRoles;
-
-    protected Map<String, List<String>> clientRoles;
-
-    protected List<String> groups;
-
     private String phone;
 
     private String mobile;
+
+    private Date dob;
+
+    private Gender gender;
+
 
 }
