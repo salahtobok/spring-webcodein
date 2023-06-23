@@ -36,7 +36,24 @@ public class UserDbService {
         userMapper.updateGivenEntityDataByDto(user, userDto);
         User resultedUser = this.userRepository.save(user);
         UserDto resultedUserDto = new UserDto();
-        userMapper.updateGivenDtoByEntityData(resultedUser,resultedUserDto);
+        userMapper.updateGivenDtoByEntityData(resultedUser, resultedUserDto);
         return resultedUserDto;
+    }
+
+    public UserDto update(UserDto userDto) {
+        User currentUser;
+        UserDto resultedUserDto;
+        currentUser = this.userRepository.findByUuid(userDto.getUuid());
+        userMapper.updateGivenEntityDataByDto(currentUser, userDto);
+        User resultedUser = this.userRepository.save(currentUser);
+        resultedUserDto = new UserDto();
+        userMapper.updateGivenDtoByEntityData(resultedUser, resultedUserDto);
+        return resultedUserDto;
+    }
+
+    public void delete(UserDto userDto) {
+        User currentUser;
+        currentUser = this.userRepository.findByUuid(userDto.getUuid());
+        this.userRepository.delete(currentUser);
     }
 }  

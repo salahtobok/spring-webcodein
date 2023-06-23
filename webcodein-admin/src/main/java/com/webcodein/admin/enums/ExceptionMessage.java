@@ -5,9 +5,7 @@
  */
 package com.webcodein.admin.enums;
 
-public enum RestResponseMessage {
-    NOT_FOUND,
-    FORBIDDEN,
-    CONSTRAINT_VIOLATIONS,
-    ERROR_WHILE_DELETING_USER;
+public enum ExceptionMessage {
+    DELETING_FAILED,
+    UPDATING_FAILED,
 }
