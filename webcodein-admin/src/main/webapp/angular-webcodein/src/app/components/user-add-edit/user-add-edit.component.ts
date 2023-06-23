@@ -32,7 +32,7 @@ export class UserAddEditComponent implements OnInit {
     if (this.userForm.valid) {
       console.log(this.data)
       if (this.data == null) {
-        this._userService.addUser(this.userForm.value).subscribe({
+        this._userService.createUser(this.userForm.value).subscribe({
           next: (value: any) => {
             this._coreService.openSnackBar("User added successfully","Done")
             this._dialogRef.close(true)
@@ -43,8 +43,10 @@ export class UserAddEditComponent implements OnInit {
           }
         })
       } else if (this.data) {
-        console.log(this.userForm.value)
-        this._userService.updateUser(this.data.id, this.userForm.value).subscribe({
+        console.log(this.userForm.value);
+        let user: User = this.userForm.value;
+        user.uuid = this.data.uuid;
+        this._userService.updateUser(user).subscribe({
           next: (value: any) => {
             this._coreService.openSnackBar("User updated successfully","Done")
             this._dialogRef.close(true)

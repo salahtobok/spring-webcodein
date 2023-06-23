@@ -1,15 +1,19 @@
 package com.webcodein.admin.service;
 
 
+import ch.qos.logback.core.testUtil.RandomUtil;
 import com.webcodein.admin.data.entity.User;
 import com.webcodein.admin.data.mapper.UserMapper;
 import com.webcodein.admin.dto.UserDto;
 import com.webcodein.admin.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class UserDbService {
@@ -33,6 +37,7 @@ public class UserDbService {
 
     public UserDto create(UserDto userDto) {
         User user = new User();
+        userDto.setUuid(UUID.randomUUID().toString());
         userMapper.updateGivenEntityDataByDto(user, userDto);
         User resultedUser = this.userRepository.save(user);
         UserDto resultedUserDto = new UserDto();
@@ -43,6 +48,7 @@ public class UserDbService {
     public UserDto update(UserDto userDto) {
         User currentUser;
         UserDto resultedUserDto;
+        System.out.println("userDto.getUuid() = " + userDto.getUuid());
         currentUser = this.userRepository.findByUuid(userDto.getUuid());
         userMapper.updateGivenEntityDataByDto(currentUser, userDto);
         User resultedUser = this.userRepository.save(currentUser);

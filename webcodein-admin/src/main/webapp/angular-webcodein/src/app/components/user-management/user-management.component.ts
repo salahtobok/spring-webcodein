@@ -116,8 +116,8 @@ export class UserManagementComponent implements OnInit {
   }
 
 
-  deleteUser(id: number) {
-    this._userService.deleteUser(id).subscribe({
+  deleteUser(user: User) {
+    this._userService.deleteUser(user).subscribe({
       next: (res) => {
         this._coreService.openSnackBar("User deleted","Done")
         this.getUserList();

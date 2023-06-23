@@ -55,6 +55,7 @@ public class UserRestController {
     public Response update(@Valid UserDto userDto) throws Exception {
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "REST request to update the user");
         UserDto resultedUserDto = userDbService.update(userDto);
+        System.out.println("resultedUserDto = " + resultedUserDto);
         return Response.ok(resultedUserDto, MediaType.APPLICATION_JSON).build();
     }
 

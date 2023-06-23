@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {User} from "../dtos/user";
 
 @Injectable({
   providedIn: 'root'
@@ -13,25 +14,25 @@ export class UserService {
   constructor(private _http: HttpClient) {
   }
 
-  addUser(data: any): Observable<any> {
+  createUser(data: User): Observable<any> {
     return this._http.post(this.apiHostUrl + "/admin/users/create", data);
   }
 
 
-  updateUser(id: number ,data: any): Observable<any> {
-    return this._http.put(this.apiHostUrl +`/users/${id}` , data);
+  updateUser(data: User): Observable<any> {
+    return this._http.post(this.apiHostUrl +"/admin/users/update" , data);
+  }
+
+  getUser(id: any): Observable<any> {
+    return this._http.get(this.apiHostUrl+"/admin/users",id)
+  }
+
+  deleteUser(data: User): Observable<any> {
+    console.log("data => "+data)
+    return this._http.post(this.apiHostUrl+"/admin/users/delete",data)
   }
 
   getUsersList(): Observable<any> {
     return this._http.get(this.apiHostUrl+"/admin/users")
-  }
-
-  getUser(id: any): Observable<any> {
-    return this._http.get(this.apiHostUrl+"/users ",id)
-  }
-
-  deleteUser(id: number): Observable<any> {
-    console.log("id => "+id)
-    return this._http.delete(this.apiHostUrl+`/users/${id}`)
   }
 }

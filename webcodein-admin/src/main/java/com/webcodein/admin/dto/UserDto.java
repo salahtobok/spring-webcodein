@@ -20,6 +20,8 @@ import java.util.Map;
 @ToString
 public class UserDto extends BasicEntity implements Serializable, Cloneable {
 
+    private Long id;
+
     private String uuid;
 
     private String keycloakUUID;
