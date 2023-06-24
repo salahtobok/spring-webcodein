@@ -8,8 +8,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>webcodein-admin</module>
-    <module>spring-boot-keycloak</module>
-    <module>spring-boot-keycloak-2</module>
   </modules>
   <properties>
     <maven.compiler.source>18</maven.compiler.source>

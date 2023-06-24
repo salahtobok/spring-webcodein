@@ -8,8 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="webcodein-admin" />
-        <module name="spring-boot-keycloak" />
-        <module name="spring-boot-keycloak-2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
